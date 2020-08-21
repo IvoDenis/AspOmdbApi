@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ASP.Models.MovieFull
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Model.Title</title>
+</head>
+<body>
+    <div class="table">
+
+
+        <div> <img src=@Model.Poster></div>
+
+        <div> Actors:@Model.Actors</div>
+        <div> Director:@Model.Director</div>
+        <div> @Model.Plot</div>
+
+
+    </div>
+</body>
+</html>
