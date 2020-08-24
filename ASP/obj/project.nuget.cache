@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NP3VBE/ENZuawYDIPVgHC7bniWRMspvPaAPF8pEOA62dK62/kq9HxFr2sLZV2dQv5aQ+0dXZUhE3M8orBESNqQ==",
+  "dgSpecHash": "2K1gPK4H5Lqm5leiy9l7i6EY3kV+RA9pPSPHxuiSP944kB4IKEjs74r+omW/FJy6nN5/45eLlcOLgzPHHysqgw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tatiana\\source\\repos\\ASP\\ASP\\ASP.csproj",
+  "projectFilePath": "C:\\Users\\tatiana\\ASP\\ASP\\ASP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tatiana\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\tatiana\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

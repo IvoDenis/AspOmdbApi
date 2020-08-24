@@ -35,10 +35,10 @@
                             <td> <a asp-controller="Info" asp-action="Index" asp-route-id="@movie.imdbID" class="btn btn-info"> More...</a></td>
                             <td>
                                 <form asp-action="Add" asp-all-route-data="@(new Dictionary<string, string>
-                                                                      { { "_movie.Title", movie.Title },
-                                                                          { "_movie.Poster", movie.Poster },
-                                                                          { "_movie.Year", movie.Year.ToString() }
-                                                                          ,{ "_movie.imdbID", movie.imdbID } } )">
+                                                                      { { "movie.Title", movie.Title },
+                                                                          { "movie.Poster", movie.Poster },
+                                                                          { "movie.Year", movie.Year.ToString() }
+                                                                          ,{ "movie.imdbID", movie.imdbID } } )">
                                     <input type="submit" value="Add" class="btn btn-primary" />
                                 </form>
                             </td>

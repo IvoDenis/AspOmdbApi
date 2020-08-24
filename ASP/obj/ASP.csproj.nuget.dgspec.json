@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tatiana\\source\\repos\\ASP\\ASP\\ASP.csproj": {}
+    "C:\\Users\\tatiana\\ASP\\ASP\\ASP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tatiana\\source\\repos\\ASP\\ASP\\ASP.csproj": {
+    "C:\\Users\\tatiana\\ASP\\ASP\\ASP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tatiana\\source\\repos\\ASP\\ASP\\ASP.csproj",
+        "projectUniqueName": "C:\\Users\\tatiana\\ASP\\ASP\\ASP.csproj",
         "projectName": "ASP",
-        "projectPath": "C:\\Users\\tatiana\\source\\repos\\ASP\\ASP\\ASP.csproj",
+        "projectPath": "C:\\Users\\tatiana\\ASP\\ASP\\ASP.csproj",
         "packagesPath": "C:\\Users\\tatiana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tatiana\\source\\repos\\ASP\\ASP\\obj\\",
+        "outputPath": "C:\\Users\\tatiana\\ASP\\ASP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tatiana\\AppData\\Roaming\\NuGet\\NuGet.Config",
