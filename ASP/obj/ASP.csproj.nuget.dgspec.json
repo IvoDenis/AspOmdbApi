@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tatiana\\ASP\\ASP\\ASP.csproj": {}
+    "C:\\Users\\feshi\\ASPOMdbApi\\AspOmdbApi\\ASP\\ASP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tatiana\\ASP\\ASP\\ASP.csproj": {
+    "C:\\Users\\feshi\\ASPOMdbApi\\AspOmdbApi\\ASP\\ASP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tatiana\\ASP\\ASP\\ASP.csproj",
+        "projectUniqueName": "C:\\Users\\feshi\\ASPOMdbApi\\AspOmdbApi\\ASP\\ASP.csproj",
         "projectName": "ASP",
-        "projectPath": "C:\\Users\\tatiana\\ASP\\ASP\\ASP.csproj",
-        "packagesPath": "C:\\Users\\tatiana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tatiana\\ASP\\ASP\\obj\\",
+        "projectPath": "C:\\Users\\feshi\\ASPOMdbApi\\AspOmdbApi\\ASP\\ASP.csproj",
+        "packagesPath": "C:\\Users\\feshi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\feshi\\ASPOMdbApi\\AspOmdbApi\\ASP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tatiana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\feshi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,6 +60,10 @@
               "target": "Package",
               "version": "[3.1.7, )"
             },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
@@ -83,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

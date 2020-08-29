@@ -44,6 +44,11 @@ namespace ASP
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
+            }
             app.UseRouting();
             app.UseStaticFiles();
             app.UseAuthentication();
@@ -52,7 +57,7 @@ namespace ASP
                 {
                     endpoints.MapControllerRoute(
                         name: "default",
-                        pattern: "{controller=Search}/{action=Index}/{id?}");
+                        pattern: "{controller=Account}/{action=Register}/{id?}");
 
                 });
         }
