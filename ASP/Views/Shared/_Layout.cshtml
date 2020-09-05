@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-light bg-dark border-bottom box-shadow ">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
 
             <a class="navbar-brand text-white" asp-area="" asp-controller="Search" asp-action="Index">MovieSearcher</a>
 
@@ -21,6 +21,25 @@
                 <li class="nav-item">
                     <a class="nav-link text-light" asp-area="" asp-controller="MovieList" asp-action="Index">List</a>
                 </li>
+                @if (User.Identity.IsAuthenticated)
+                {
+
+                    <li>
+                        <form method="post" asp-controller="Account" asp-action="Logout" class=" btn btn-block">
+                            <input type="submit" value="Выход" />
+                        </form>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a  class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Login">
+                            Login
+                        </a>
+                    </li>
+                }
+
+
             </ul>
             <form asp-controller="Search" asp-action="Index" class="form-inline">
 
@@ -29,6 +48,8 @@
                 <input type="submit" value="Get" class="btn btn-primary" />
 
             </form>
+
+
 
 
         </nav>

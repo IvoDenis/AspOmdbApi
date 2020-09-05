@@ -1,22 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 namespace ASP.Models
 {
     public class Movie
     {
-        [JsonProperty]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public string Id { get; set; }
+        public string UserId { get; set; }
         public string Title { get; set; }
-        [JsonProperty]
+
         public string Year { get; set; }
-        [JsonProperty]
+
         public string imdbID { get; set; }
 
-        [JsonProperty]
+
         public string Poster { get; set; }
+        [Range(1,10)]
+        public int? Rating { get; set; }
+
 
     }
 }

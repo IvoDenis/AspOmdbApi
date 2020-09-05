@@ -317,3 +317,4 @@ C:\Users\feshi\ASPOMdbApi\AspOmdbApi\ASP\bin\Debug\netcoreapp3.1\zh-Hant\Microso
 C:\Users\feshi\ASPOMdbApi\AspOmdbApi\ASP\obj\Debug\netcoreapp3.1\ASP.csproj.CoreCompileInputs.cache
 C:\Users\feshi\ASPOMdbApi\AspOmdbApi\ASP\obj\Debug\netcoreapp3.1\ASP.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\feshi\ASPOMdbApi\AspOmdbApi\ASP\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\feshi\ASPOMdbApi\AspOmdbApi\ASP\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs

@@ -6,14 +6,17 @@ using Newtonsoft.Json;
 
 namespace ASP.Models
 {
-    public class SearchResult
+    public class MovieDTO
     {
         [JsonProperty]
-        public List<MovieDTO> Search { get; set; }
+        public string Title { get; set; }
         [JsonProperty]
-        public int totalResults { get; set; }
+        public string Year { get; set; }
         [JsonProperty]
-        public string Response { get; set; }
+        public string imdbID { get; set; }
+
+        [JsonProperty]
+        public string Poster { get; set; }
 
     }
 }

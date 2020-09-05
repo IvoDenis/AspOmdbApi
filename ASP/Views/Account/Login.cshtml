@@ -1,9 +1,7 @@
-﻿@model ASP.Models.ViewModels.RegistationViewModel
-
-
+﻿@model ASP.Models.ViewModels.LoginViewModel;
 
 <form method="post">
-    Register
+    Login
     <div class="form-group">
         <label asp-for="Email"></label>
         <input asp-for="Email" class="form-control" />
@@ -13,13 +11,16 @@
         <input asp-for="Password" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="PasswordConfirm"></label>
-        <input asp-for="PasswordConfirm" class="form-control" />
+        <label asp-for="RememberMe"></label>
+        <input asp-for="RememberMe" class="form-control" />
     </div>
-    <button type="submit" class="btn btn-primary">Registration</button>
-</form>
+    <button type="submit" class="btn btn-primary">Login</button>
 
-<a method="get" asp-action="Login" class="form-inline">
-    Login
-</a>
+</form>
+<div>
+    <a  asp-action="Register" class="form-inline">
+
+        Register
+    </a>
+</div>
 

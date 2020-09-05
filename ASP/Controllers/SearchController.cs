@@ -12,19 +12,19 @@ namespace ASP
 {
     public class SearchController : Controller
     {
-        private readonly IMovieServices movieServices;
-        private readonly IMovieListRepository movieList;
+        private readonly IMovieServices _movieServices;
+        
 
         public SearchController(IMovieServices movieServices, IMovieListRepository movieList)
         {
-            this.movieServices = movieServices;
-            this.movieList = movieList;
+           _movieServices = movieServices;
+            
         }
         public async Task<IActionResult> Index(string search, int page = 1)
         {
             SearchResult searchResult = new SearchResult();
 
-            string json = await movieServices.SearchDataAsync(search, page);
+            string json = await _movieServices.SearchDataAsync(search, page);
             searchResult = JsonConvert.DeserializeObject<SearchResult>(json);
             PagingInfo paging = new PagingInfo(searchResult.totalResults, page);
             MovieViewModel viewModel = new MovieViewModel
@@ -36,10 +36,6 @@ namespace ASP
             return View(viewModel);
         }
       
-        public IActionResult Add(Movie movie)
-        {
-            movieList.Add(movie);
-            return RedirectToAction("Index");
-        }
+       
     }
 }

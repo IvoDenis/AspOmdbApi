@@ -8,7 +8,7 @@ namespace ASP.Models.ViewModels
     public class MovieViewModel
     {
         public PagingInfo pagingInfo;
-        public IEnumerable<Movie> movies;
+        public IEnumerable<MovieDTO> movies;
         public string Query;
     }
 }

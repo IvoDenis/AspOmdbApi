@@ -1,8 +1,12 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@{
+    ViewData["Title"] = "Search";
+}
 @model ASP.Models.ViewModels.MovieViewModel
 @{
+
     <!DOCTYPE html>
 
     <html>
@@ -34,11 +38,11 @@
                             <td>   @movie.Year</td>
                             <td> <a asp-controller="Info" asp-action="Index" asp-route-id="@movie.imdbID" class="btn btn-info"> More...</a></td>
                             <td>
-                                <form asp-action="Add" asp-all-route-data="@(new Dictionary<string, string>
-                                                                      { { "movie.Title", movie.Title },
-                                                                          { "movie.Poster", movie.Poster },
-                                                                          { "movie.Year", movie.Year.ToString() }
-                                                                          ,{ "movie.imdbID", movie.imdbID } } )">
+                                <form asp-controller="MovieList" asp-action="Add" asp-all-route-data="@(new Dictionary<string, string>
+                                                                      { { "movieDTO.Title", movie.Title },
+                                                                          { "movieDTO.Poster", movie.Poster },
+                                                                          { "movieDTO.Year", movie.Year.ToString() }
+                                                                          ,{ "movieDTO.imdbID", movie.imdbID } })">
                                     <input type="submit" value="Add" class="btn btn-primary" />
                                 </form>
                             </td>
@@ -47,37 +51,39 @@
                 }
             </tbody>
         </table>
-        @if (Model.movies != null)
-        {
-            @if (Model.pagingInfo.HasPreviousPage)
+        <form class=" form-inline">
+            @if (Model.movies != null)
             {
+                @if (Model.pagingInfo.HasPreviousPage)
+                {
+                    <a asp-action="Index"
+                       asp-route-search="@Model.Query"
+                       asp-route-page="@(Model.pagingInfo.CurrentPage - 1)"
+                       class="btn btn-outline-dark">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        @(Model.pagingInfo.CurrentPage - 1)
+                    </a>
+                }
+                @if (Model.pagingInfo.HasNextPage)
+                {
+                    <a asp-action="Index"
+                       asp-route-search="@Model.Query"
+                       asp-route-page="@(Model.pagingInfo.CurrentPage + 1)"
+                       class="btn btn-outline-dark">
+                        @(Model.pagingInfo.CurrentPage + 1)
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                    </a>
+                }
+                <label class="sr-only"> ...</label>
                 <a asp-action="Index"
                    asp-route-search="@Model.Query"
-                   asp-route-page="@(Model.pagingInfo.CurrentPage - 1)"
+                   asp-route-page="@(Model.pagingInfo.TotalPages)"
                    class="btn btn-outline-dark">
-                    <i class="glyphicon glyphicon-chevron-left"></i>
-                    @(Model.pagingInfo.CurrentPage - 1)
-                </a>
-            }
-            @if (Model.pagingInfo.HasNextPage)
-            {
-                <a asp-action="Index"
-                   asp-route-search="@Model.Query"
-                   asp-route-page="@(Model.pagingInfo.CurrentPage + 1)"
-                   class="btn btn-outline-dark">
-                    @(Model.pagingInfo.CurrentPage + 1)
+                    @Model.pagingInfo.TotalPages
                     <i class="glyphicon glyphicon-chevron-right"></i>
                 </a>
             }
-           
-            <a asp-action="Index"
-               asp-route-search="@Model.Query"
-               asp-route-page="@(Model.pagingInfo.TotalPages)"
-               class="btn btn-outline-dark">
-               @Model.pagingInfo.TotalPages
-                <i class="glyphicon glyphicon-chevron-right"></i>
-            </a>
-        }
+        </form>
     </body>
 </html>
 }

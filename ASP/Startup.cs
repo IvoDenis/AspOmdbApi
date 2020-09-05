@@ -29,12 +29,17 @@ namespace ASP
         {
             services.AddMvc();
             services.AddScoped<IMovieServices, OMDBService>();
-            services.AddSingleton<IMovieListRepository, MovieRepository>();
             services.AddDbContext<AppIdentityDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentity<AppUser, IdentityRole>().
                 AddEntityFrameworkStores<AppIdentityDbContext>().
                 AddDefaultTokenProviders();
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireNonAlphanumeric = false;
+            });
+            services.AddDbContext<MovieDBContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,7 +62,7 @@ namespace ASP
                 {
                     endpoints.MapControllerRoute(
                         name: "default",
-                        pattern: "{controller=Account}/{action=Register}/{id?}");
+                        pattern: "{controller=Search}/{action=Index}/{id?}");
 
                 });
         }
