@@ -9,6 +9,7 @@ namespace ASP.Models
     public class MovieDBContext:DbContext
     {
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<Comment> Comments { get; set; }
         public MovieDBContext(DbContextOptions<MovieDBContext> options):base(options)
         {
             Database.EnsureCreated();

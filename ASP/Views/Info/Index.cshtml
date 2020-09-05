@@ -1,7 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@model ASP.Models.MovieFull
+@model ASP.Models.ViewModels.MovieInfoViewModel
 @{
 }
 
@@ -10,19 +10,40 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@Model.Title</title>
+    <title>@Model.Movie.Title</title>
 </head>
 <body>
     <div class="table">
 
 
-        <div> <img src=@Model.Poster></div>
+        <div> <img src=@Model.Movie.Poster></div>
 
-        <div> Actors:@Model.Actors</div>
-        <div> Director:@Model.Director</div>
-        <div> @Model.Plot</div>
+        <div> Actors:@Model.Movie.Actors</div>
+        <div> Director:@Model.Movie.Director</div>
+        <div> @Model.Movie.Plot</div>
 
 
     </div>
+    <form asp-controller="Info" asp-action="PostComment" asp-route-id="@Model.Movie.imdbID" >
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">With textarea</span>
+        </div>
+        <textarea name="commenttext" class="form-control" aria-label="With textarea"></textarea>
+    </div>
+        <div>
+            <input type="submit" class="btn" value="Post Comment" />
+        </div>
+        </form>
+    <table class="table">
+        <tbody>
+            @foreach (var comment in Model.comments)
+            {
+                <tr>
+                    @comment.Text
+                </tr>
+            }
+        </tbody>
+    </table>
 </body>
 </html>

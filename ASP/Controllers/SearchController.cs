@@ -15,7 +15,7 @@ namespace ASP
         private readonly IMovieServices _movieServices;
         
 
-        public SearchController(IMovieServices movieServices, IMovieListRepository movieList)
+        public SearchController(IMovieServices movieServices)
         {
            _movieServices = movieServices;
             
