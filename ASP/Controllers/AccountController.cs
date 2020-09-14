@@ -86,7 +86,7 @@ namespace ASP.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
-             await _signInManager.SignOutAsync();
+            await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Search");
 
         }

@@ -24,26 +24,36 @@
 
 
     </div>
-    <form asp-controller="Info" asp-action="PostComment" asp-route-id="@Model.Movie.imdbID" >
-    <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text">With textarea</span>
+    <form asp-controller="Info" asp-action="PostComment" asp-route-id="@Model.Movie.imdbID">
+        <div class="input-group">
+
+            <textarea name="commenttext" class="form-control"></textarea>
         </div>
-        <textarea name="commenttext" class="form-control" aria-label="With textarea"></textarea>
-    </div>
         <div>
             <input type="submit" class="btn" value="Post Comment" />
         </div>
-        </form>
-    <table class="table">
-        <tbody>
-            @foreach (var comment in Model.comments)
-            {
+    </form>
+
+    @foreach (var comment in Model.comments.Join(Model.userEmails, c => c.UserId, u => u.Id, (c, u) => new { user = u, Text = c.Text }))
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <a asp-controller="MovieList" asp-action="Index" asp-route-userId="@comment.user.Id"> @comment.user.Email</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
                 <tr>
                     @comment.Text
                 </tr>
-            }
-        </tbody>
-    </table>
+            </tbody>
+
+
+        </table>
+
+    }
+
 </body>
 </html>

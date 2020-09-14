@@ -3,10 +3,10 @@
 *@
 @{
 }
-@model IEnumerable<ASP.Models.Movie>
+@model IEnumerable<ASP.Models.ViewModels.MovieListItemViewModel>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>My  Movie List</title>
+    <title>  Movie List</title>
 </head>
 <body>
     <table class="table">
@@ -21,33 +21,49 @@
         <tbody>
             @if (Model != null)
             {
-            @foreach (var movie in Model)
+                @foreach (var item in Model)
                 {
 
-            <tr>
-                <td>  <img src=@movie.Poster /></td>
-                <td>   @movie.Title</td>
-                <td>   @movie.Year</td>
-                <td>
-                    <form asp-action="Update" asp-route-id="@movie.Id">
-                        <div>
-                            <label asp-for="@movie.Rating"></label>
-                            <select name="score" asp-for="@movie.Rating" asp-items="@Enumerable.Range(1,10)
-                                                                       .Select(score => new SelectListItem
-                                                                        { Value = score.ToString(),
-                                                                           Text = score.ToString(),
-                                                                            Selected = (score == movie.Rating)
-                                                                         }).ToList()"></select>
-                            <br />
-                            <input type="submit" value="Update" class="btn btn-primary" />
-                        </div>
+                    <tr>
+                        <td>  <img src=@item.movie.Poster /></td>
+                        <td>   @item.movie.Title</td>
+                        <td>   @item.movie.Year</td>
+                        <td>
+                            @if (item.canUpdate)
+                            {
+                                <form asp-action="Update" asp-route-id="@item.movie.Id">
+                                    <div>
+                                        <label asp-for="@item.movie.Rating"></label>
+                                        <select name="score" asp-for="@item.movie.Rating" asp-items="@Enumerable.Range(1, 10)
+                                                             .Select(score => new SelectListItem
+                                                             { Value = score.ToString(),
+                                                                 Text = score.ToString(),
+                                                                 Selected = (score == item.movie.Rating)
+                                                             }).ToList()"></select>
+                                        <br />
+                                        <input type="submit" value="Update" class="btn btn-primary" />
+                                    </div>
 
-                    </form>   
-                </td>
+                                </form>
+                            }
+                            else if (item.canAdd)
+                            {
+                                <form asp-controller="MovieList" asp-action="Add" asp-all-route-data="@(new Dictionary<string, string>
+                                                                      { { "movieDTO.Title", item.movie.Title },
+                                                                          { "movieDTO.Poster", item.movie.Poster },
+                                                                          { "movieDTO.Year", item.movie.Year.ToString() }
+                                                                          ,{ "movieDTO.imdbID", item.movie.imdbID } })">
+                                    <input type="submit" value="Add" class="btn btn-primary" />
+                                </form>
+                            }
+                        </td>
 
-                <td>  <a asp-controller="Info" asp-action="Index" asp-route-id="@movie.imdbID" class="btn btn-info"> More...</a></td>
-                <td><a asp-action="Delete" asp-route-id="@movie.Id" class="btn btn-danger"> Delete </a></td>
-            </tr>
+                        <td>  <a asp-controller="Info" asp-action="Index" asp-route-id="@item.movie.imdbID" class="btn btn-info"> More...</a></td>
+                        @if (item.canUpdate)
+                        {
+                            <td><a asp-action="Delete" asp-route-id="@item.movie.Id" class="btn btn-danger"> Delete </a></td>
+                        }
+                    </tr>
                 }
             }
         </tbody>

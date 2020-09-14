@@ -9,7 +9,7 @@ namespace ASP.Models.ViewModels
     {
         public MovieFull Movie { get; set; }
         public IEnumerable<Comment> comments { get; set; }
+        public IEnumerable<AppUser> userEmails { get; set; }
 
-       
     }
 }
