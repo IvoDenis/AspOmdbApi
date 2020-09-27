@@ -34,7 +34,7 @@
         </div>
     </form>
 
-    @foreach (var comment in Model.comments.Join(Model.userEmails, c => c.UserId, u => u.Id, (c, u) => new { user = u, Text = c.Text }))
+    @foreach (var comment in Model.comments.Join(Model.userEmails, c => c.UserId, u => u.Id, (c, u) => new { user = u, Text = c.Text, Id = c.id }).Distinct())
     {
         <table>
             <thead>

@@ -46,8 +46,8 @@ namespace ASP.Controllers
                 var user = await _userManager.FindByIdAsync(comment.UserId);
                 users.Add(user);
             }
-           
-            MovieInfoViewModel viewModel = new MovieInfoViewModel { Movie = movieFull, comments = commentsForMovie,userEmails=users};
+
+            MovieInfoViewModel viewModel = new MovieInfoViewModel { Movie = movieFull, comments = commentsForMovie, userEmails = users };
             return View(viewModel);
         }
     }

@@ -12,8 +12,15 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 1 "C:\Users\feshi\ASPOMdbApi\AspOmdbApi\ASP\Views\_ViewImports.cshtml"
+using ASP.Models;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"482940fb2ab677ed6f29c3513d378249c29558bb", @"/Views/MovieList/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"25fd987d7388ad707b6b8d314dfa2b63ad979348", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"580e1f3fc54be46eb8fb1052944323e6a8a992ab", @"/Views/_ViewImports.cshtml")]
     public class Views_MovieList_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<ASP.Models.ViewModels.MovieListItemViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("name", "score", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -55,7 +62,7 @@ namespace AspNetCore
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "482940fb2ab677ed6f29c3513d378249c29558bb6358", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "482940fb2ab677ed6f29c3513d378249c29558bb6524", async() => {
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width\" />\r\n    <title>  Movie List</title>\r\n");
             }
             );
@@ -69,7 +76,7 @@ namespace AspNetCore
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "482940fb2ab677ed6f29c3513d378249c29558bb7424", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "482940fb2ab677ed6f29c3513d378249c29558bb7590", async() => {
                 WriteLiteral("\r\n    <table class=\"table\">\r\n        <thead>\r\n            <tr>\r\n                <th> Poster</th>\r\n                <th> Title</th>\r\n                <th>  Year</th>\r\n                <th>  Score</th>\r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n");
 #nullable restore
 #line 22 "C:\Users\feshi\ASPOMdbApi\AspOmdbApi\ASP\Views\MovieList\Index.cshtml"
@@ -125,9 +132,9 @@ WriteAttributeValue("", 743, item.movie.Poster, 743, 18, false);
 #line hidden
 #nullable disable
                 WriteLiteral("                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "482940fb2ab677ed6f29c3513d378249c29558bb9745", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "482940fb2ab677ed6f29c3513d378249c29558bb9911", async() => {
                     WriteLiteral("\r\n                                    <div>\r\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "482940fb2ab677ed6f29c3513d378249c29558bb10096", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "482940fb2ab677ed6f29c3513d378249c29558bb10262", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.LabelTagHelper>();
@@ -148,7 +155,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\r\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "482940fb2ab677ed6f29c3513d378249c29558bb11677", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "482940fb2ab677ed6f29c3513d378249c29558bb11843", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();
@@ -225,7 +232,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = Enumerable.Range(1
 #line hidden
 #nullable disable
                 WriteLiteral("                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "482940fb2ab677ed6f29c3513d378249c29558bb17215", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "482940fb2ab677ed6f29c3513d378249c29558bb17381", async() => {
                     WriteLiteral("\r\n                                    <input type=\"submit\" value=\"Add\" class=\"btn btn-primary\" />\r\n                                ");
                 }
                 );
@@ -265,7 +272,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper.RouteValues = (new Dictionar
 #line hidden
 #nullable disable
                 WriteLiteral("                        </td>\r\n\r\n                        <td>  ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "482940fb2ab677ed6f29c3513d378249c29558bb20315", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "482940fb2ab677ed6f29c3513d378249c29558bb20481", async() => {
                     WriteLiteral(" More...");
                 }
                 );
@@ -308,7 +315,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper.RouteValues = (new Dictionar
 #line hidden
 #nullable disable
                 WriteLiteral("                            <td>");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "482940fb2ab677ed6f29c3513d378249c29558bb23197", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "482940fb2ab677ed6f29c3513d378249c29558bb23363", async() => {
                     WriteLiteral(" Delete ");
                 }
                 );

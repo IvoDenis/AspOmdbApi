@@ -37,6 +37,7 @@ namespace ASP
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireNonAlphanumeric = false;
+                options.User.RequireUniqueEmail = true;
             });
             services.AddDbContext<MovieDBContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));

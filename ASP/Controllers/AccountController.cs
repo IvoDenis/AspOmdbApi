@@ -45,7 +45,8 @@ namespace ASP.Controllers
                 else
                 {
                     foreach (IdentityError error in result.Errors)
-                        ModelState.AddModelError("", error.Description);
+                        this.ModelState.AddModelError("", error.Description);
+
                 }
             }
             return View(registationViewModel);
