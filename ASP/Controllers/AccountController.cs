@@ -72,7 +72,7 @@ namespace ASP.Controllers
                     }
                     else
                     {
-                        RedirectToAction("Index", "Search");
+                         return RedirectToAction("Index", "Search");
                     }
                 }
                 else
